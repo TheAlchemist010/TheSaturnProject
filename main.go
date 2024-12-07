@@ -19,9 +19,9 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
     path := strings.TrimPrefix(r.URL.Path, "/api/")
     switch {
         case strings.HasPrefix(path, "serverstatus"):
-           api.Handle(w, r)
-        case strings.HasPrefix(path, "gamelogic"):
-            api.Handle(w, r)
+           api.ServerStatusHandle(w, r)
+        case strings.HasPrefix(path, "gamestate"):
+            api.GetGameStateHandle(w, r)
         default:
             http.Error(w, "Endpoint not found", http.StatusNotFound)
     }

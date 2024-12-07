@@ -6,7 +6,7 @@ import (
     
 )
 
-func Handle(w http.ResponseWriter, r *http.Request) {
+func ServerStatusHandle(w http.ResponseWriter, r *http.Request) {
     if r.Method == http.MethodGet {
         // Example: Send server status
         response := map[string]string{
